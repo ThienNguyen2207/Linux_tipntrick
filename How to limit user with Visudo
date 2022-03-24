@@ -1,0 +1,10 @@
+[Tien@localhost test]$ sudo touch sssssss.txt
+[sudo] password for Tien: 
+[Tien@localhost test]$ 
+[Tien@localhost test]$ ls 
+sssssss.txt
+[Tien@localhost test]$ 
+[Tien@localhost test]$ sudo vim sssssss.txt
+**Sorry, user Tien is not allowed to execute '/bin/vim sssssss.txt' as root on localhost.localdomain.**
+[Tien@localhost test]$ 
+[Tien@localhost test]$ 
