@@ -1,0 +1,35 @@
+#Add a user:
+[root@localhost test]# adduser admin
+[root@localhost test]# 
+[root@localhost test]# 
+[root@localhost test]# 
+[root@localhost test]# su admin
+[admin@localhost test]$ 
+[admin@localhost test]$ 
+[admin@localhost test]$ id
+uid=1009(admin) gid=1011(admin) groups=1011(admin)
+
+# Remove a existing user
+[root@localhost test]# userdel -r admin
+[root@localhost test]# 
+[root@localhost test]# su admin
+su: user admin does not exist
+
+**************************************************************************************
+File permission
+
+---> two ways to set file permission:
+Symbolic method : Eg: chmod ug+rw test.txt
+
+Numeric method  : 
+-rw-r--r-- 12 linuxize users 12.0K Apr  8 20:51 filename.txt
+|[-][-][-]-   [------] [---]
+| |  |  | |      |       |
+| |  |  | |      |       +-----------> 7. Group
+| |  |  | |      +-------------------> 6. Owner
+| |  |  | +--------------------------> 5. Alternate Access Method
+| |  |  +----------------------------> 4. Others Permissions
+| |  +-------------------------------> 3. Group Permissions
+| +----------------------------------> 2. Owner Permissions
++------------------------------------> 1. File Type
+
