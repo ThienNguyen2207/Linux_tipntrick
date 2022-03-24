@@ -16,12 +16,12 @@ uid=1009(admin) gid=1011(admin) groups=1011(admin)
 su: user admin does not exist
 
 **************************************************************************************
-File permission
+File permission and chmod command
 
 ---> two ways to set file permission:
-Symbolic method : Eg: chmod ug+rw test.txt
+Symbolic method : Eg: chmod ug+rw filename
 
-Numeric method  : 
+Numeric method  : chmod 777 [filename]
 -rw-r--r-- 12 linuxize users 12.0K Apr  8 20:51 filename.txt
 |[-][-][-]-   [------] [---]
 | |  |  | |      |       |
@@ -33,3 +33,7 @@ Numeric method  :
 | +----------------------------------> 2. Owner Permissions
 +------------------------------------> 1. File Type
 
+*****************************************************************************************
+File and chown command
+It works for changing the owner of file.
+COMMAND: chown USER:GROUP FILE
