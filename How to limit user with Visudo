@@ -1,3 +1,4 @@
+# How to limit user with Visudo
 [Tien@localhost test]$ sudo touch sssssss.txt
 [sudo] password for Tien: 
 [Tien@localhost test]$ 
@@ -5,6 +6,36 @@
 sssssss.txt
 [Tien@localhost test]$ 
 [Tien@localhost test]$ sudo vim sssssss.txt
-**Sorry, user Tien is not allowed to execute '/bin/vim sssssss.txt' as root on localhost.localdomain.**
+** Sorry, user Tien is not allowed to execute '/bin/vim sssssss.txt' as root on localhost.localdomain. **
 [Tien@localhost test]$ 
+
+*****************************************************************************************************************
+# the format of visudo configuration
+
+       Tien              192.168.41.0/24=(thien)                   /bin/touch
+        
+       Username         HOSTS   = (substitute user do)             COMMAND 
+      
+It means that allow User Tien cloud run command "touch" under user "thien" from remote host with IP: 192.168.41.0/24.
+If we replace 192.168.41.0/24== localhost, It means It just do at console mode. From any ssh conection, COMMAND would be rejected.
+
+[Tien@localhost test]$ sudo touch ttttttttt.txt
+Sorry, user Tien is not allowed to execute '/bin/touch ttttttttt.txt' as root on localhost.localdomain.
 [Tien@localhost test]$ 
+
+[Tien@localhost test]$ 
+[Tien@localhost test]$ sudo  -u thien touch ttttttttt.txt
+[Tien@localhost test]$ 
+
+[Tien@localhost test]$ 
+[Tien@localhost test]$ ll
+total 0
+-rw-r--r-- 1 **thien** **thien** 0 Mar 24 23:18 ttttttttt.txt
+[Tien@localhost test]$ 
+
+
+**Note:** after applying the changes of visudo, It should be logout of relevant users.
+
+
+******************************************************************************************************************
+
