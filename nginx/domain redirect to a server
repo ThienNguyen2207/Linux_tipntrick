@@ -1,0 +1,10 @@
+server {
+       listen 80;
+        listen [::]:80;
+        server_name api-dev2.minu.ai;
+
+        location / {
+                proxy_pass http://0.0.0.0:3000;
+#                proxy_pass http://10.0.1.188:3000;
+        }
+}
