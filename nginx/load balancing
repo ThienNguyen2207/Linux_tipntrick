@@ -9,3 +9,4 @@ server {
         proxy_pass http://api-dev2.minu.ai;
         }
     }
+# Client ----> CloudFlare (resolve dns domain) ----> nginx with port 80 ---->handle traffic by block above ----> http://0.0.0.0:3000
