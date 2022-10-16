@@ -1,0 +1,11 @@
+cat /etc/nginx/conf.d/backend_v2.conf
+
+upstream api-dev2.minu.ai {
+    server 10.0.1.196:3000;
+    server 10.0.1.188:3000;
+    }
+server {
+    location / {
+        proxy_pass http://api-dev2.minu.ai;
+        }
+    }
